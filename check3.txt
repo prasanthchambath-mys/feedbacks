@@ -1,0 +1,45 @@
+prasanth [ ~/manuai-v4 ]$ BASE=https://manuai-env.livelytree-3b70b95c.eastus.azurecontainerapps.io
+curl --max-time 20 -s -o /dev/null -w "health: %{http_code} in %{time_total}s\n" $BASE/api/health/ready
+curl --max-time 30 -s -o /dev/null -w "oee: %{http_code} in %{time_total}s\n" "$BASE/api/oee/summary?plant=All%20Plants"
+health: 000 in 20.001475s
+az containerapp logs show -n manuai-api-app -g Manu-AI-Solution-RG --tail 30oee: 000 in 30.000823s
+prasanth [ ~/manuai-v4 ]$ az containerapp logs show -n manuai-api-app -g Manu-AI-Solution-RG --tail 30
+{"TimeStamp": "2026-07-09T16:21:56.4164", "Log": "Connecting to the container 'manuai-api-app'..."}
+{"TimeStamp": "2026-07-09T16:21:56.44612", "Log": "Successfully Connected to container: 'manuai-api-app' [Revision: 'manuai-api-app--0000002', Replica: 'manuai-api-app--0000002-6cfc6ff6fc-5n94z']"}
+{"TimeStamp": "2026-07-09T16:14:38.3287477+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:14:38.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:14:53.3290352+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:14:53.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:15:08.3281596+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:15:08.327Z\"}"}
+{"TimeStamp": "2026-07-09T16:15:23.3289595+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:15:23.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:15:38.3286321+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:15:38.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:15:53.328752+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:15:53.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:16:08.3284923+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:16:08.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:16:23.3286383+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:16:23.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:16:38.3286557+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:16:38.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:16:53.3282808+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:16:53.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:17:08.3283487+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:17:08.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:17:23.3290209+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:17:23.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:17:38.3285337+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:17:38.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:17:53.3294905+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:17:53.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:18:08.3291614+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:18:08.328Z\"}"}
+{"TimeStamp": "2026-07-09T16:18:23.3300002+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:18:23.329Z\"}"}
+{"TimeStamp": "2026-07-09T16:18:38.3302898+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:18:38.330Z\"}"}
+{"TimeStamp": "2026-07-09T16:18:53.3302473+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:18:53.329Z\"}"}
+{"TimeStamp": "2026-07-09T16:19:08.3309565+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:19:08.330Z\"}"}
+{"TimeStamp": "2026-07-09T16:19:23.3308794+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:19:23.330Z\"}"}
+{"TimeStamp": "2026-07-09T16:19:38.3313508+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:19:38.330Z\"}"}
+{"TimeStamp": "2026-07-09T16:19:53.332145+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:19:53.331Z\"}"}
+{"TimeStamp": "2026-07-09T16:20:08.3323829+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:20:08.331Z\"}"}
+{"TimeStamp": "2026-07-09T16:20:23.3328447+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:20:23.332Z\"}"}
+{"TimeStamp": "2026-07-09T16:20:38.3326396+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:20:38.332Z\"}"}
+{"TimeStamp": "2026-07-09T16:20:53.3331377+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:20:53.332Z\"}"}
+{"TimeStamp": "2026-07-09T16:21:08.3339674+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:21:08.333Z\"}"}
+{"TimeStamp": "2026-07-09T16:21:23.3334776+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:21:23.333Z\"}"}
+{"TimeStamp": "2026-07-09T16:21:38.3341075+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:21:38.333Z\"}"}
+{"TimeStamp": "2026-07-09T16:21:53.3334677+00:00", "Log": "F {\"error\":\"TypeError: Cannot set properties of undefined (setting 'kw')\",\"level\":\"warn\",\"message\":\"[SIM] tick error\",\"timestamp\":\"2026-07-09T16:21:53.333Z\"}"}
+prasanth [ ~/manuai-v4 ]$ az containerapp show -n manuai-api-app -g Manu-AI-Solution-RG --query "properties.template.containers[0].image" -o tsv 
+az containerapp show -n manuai-api-app -g Manu-AI-Solution-RG --query "properties.latestRevisionName" -o tsv
+manuaicontainerregistry.azurecr.io/manuai-api:v88
+manuai-api-app--0000002
+prasanth [ ~/manuai-v4 ]$ curl --max-time 30 -s "$BASE/api/oee/summary?plant=All%20Plants"; echo
+
+prasanth [ ~/manuai-v4 ]$ 

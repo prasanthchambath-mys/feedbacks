@@ -1,0 +1,108 @@
+
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git status
+interactive rebase in progress; onto fa94460
+Last command done (1 command done):
+   pick c921870 # Security: fix all High/Medium Snyk findings (curl/expat, python 3.13-slim + dep bumps, express/body-parser, SQLi guard, prototype-pollution guard, HTTPS enforcement)
+No commands remaining.
+You are currently rebasing branch 'main' on 'fa94460'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   BUILD_PROVENANCE.md
+        new file:   SECURITY_REMEDIATION.md
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both added:      apps/api/package.json
+        both added:      apps/api/src/database/seed-history.ts
+        both added:      apps/api/src/index.ts
+        both added:      apps/api/src/routes/history.ts
+        both added:      infra/docker/Dockerfile.api
+        both added:      infra/docker/Dockerfile.python
+        both added:      infra/docker/Dockerfile.web
+        both added:      services/energy-optimizer/requirements.txt
+        both added:      services/pdm-inference/requirements.txt
+        both added:      services/quality-vision/requirements.txt
+        both added:      services/safety-monitor/requirements.txt
+        both added:      services/supply-intelligence/requirements.txt
+        both added:      services/twin-sync/requirements.txt
+        both added:      services/yield-optimizer/requirements.txt
+
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git log origin/main -1 --oneline
+fa94460 (HEAD, origin/main) Initial commit: ManuAI v4 at v91 (four v89 patches + Safety Events filter, secrets externalized)
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git commit
+U       apps/api/package.json
+U       apps/api/src/database/seed-history.ts
+U       apps/api/src/index.ts
+U       apps/api/src/routes/history.ts
+U       infra/docker/Dockerfile.api
+U       infra/docker/Dockerfile.python
+U       infra/docker/Dockerfile.web
+U       services/energy-optimizer/requirements.txt
+U       services/pdm-inference/requirements.txt
+U       services/quality-vision/requirements.txt
+U       services/safety-monitor/requirements.txt
+U       services/supply-intelligence/requirements.txt
+U       services/twin-sync/requirements.txt
+U       services/yield-optimizer/requirements.txt
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes>    git push --set-upstream origin main
+>>         
+info: please complete authentication in your browser...
+To https://github.com/infocepts-c-hub/ManuAI.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/infocepts-c-hub/ManuAI.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. If you want to integrate the remote changes, use 'git pull'
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git log --oneline -3                                                              
+fa94460 (HEAD, origin/main) Initial commit: ManuAI v4 at v91 (four v89 patches + Safety Events filter, secrets externalized)                                      
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git status  
+interactive rebase in progress; onto fa94460
+Last command done (1 command done):
+   pick c921870 # Security: fix all High/Medium Snyk findings (curl/expat, python 3.13-slim + dep bumps, express/body-parser, SQLi guard, prototype-pollution guard, HTTPS enforcement)
+No commands remaining.
+You are currently rebasing branch 'main' on 'fa94460'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   BUILD_PROVENANCE.md
+        new file:   SECURITY_REMEDIATION.md
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both added:      apps/api/package.json
+        both added:      apps/api/src/database/seed-history.ts
+        both added:      apps/api/src/index.ts
+        both added:      apps/api/src/routes/history.ts
+        both added:      infra/docker/Dockerfile.api
+        both added:      infra/docker/Dockerfile.python
+        both added:      infra/docker/Dockerfile.web
+        both added:      services/energy-optimizer/requirements.txt
+        both added:      services/pdm-inference/requirements.txt
+        both added:      services/quality-vision/requirements.txt
+        both added:      services/safety-monitor/requirements.txt
+        both added:      services/supply-intelligence/requirements.txt
+        both added:      services/twin-sync/requirements.txt
+        both added:      services/yield-optimizer/requirements.txt
+
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git remote -v
+origin  https://github.com/infocepts-c-hub/ManuAI.git (fetch)
+origin  https://github.com/infocepts-c-hub/ManuAI.git (push)
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git grep "3.13-slim" -- infra/docker/Dockerfile.python
+infra/docker/Dockerfile.python:# by moving off python:3.11-slim to python:3.13-slim, which ships patched Debian
+infra/docker/Dockerfile.python:FROM python:3.13-slim
+infra/docker/Dockerfile.python:>>>>>>> c921870 (Security: fix all High/Medium Snyk findings (curl/expat, python 3.13-slim + dep bumps, express/body-parser, SQLi guard, prototype-pollution guard, HTTPS enforcement))
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes>

@@ -1,0 +1,157 @@
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git reset --soft origin/main
+fatal: Cannot do a soft reset in the middle of a merge.
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git checkout security-fixes
+>> git reset --soft origin/main
+apps/api/package.json: needs merge
+apps/api/src/database/seed-history.ts: needs merge
+apps/api/src/index.ts: needs merge
+apps/api/src/routes/history.ts: needs merge
+infra/docker/Dockerfile.api: needs merge
+infra/docker/Dockerfile.python: needs merge
+infra/docker/Dockerfile.web: needs merge
+services/energy-optimizer/requirements.txt: needs merge
+services/pdm-inference/requirements.txt: needs merge
+services/quality-vision/requirements.txt: needs merge
+services/safety-monitor/requirements.txt: needs merge
+services/supply-intelligence/requirements.txt: needs merge
+services/twin-sync/requirements.txt: needs merge
+services/yield-optimizer/requirements.txt: needs merge
+error: you need to resolve your current index first
+fatal: Cannot do a soft reset in the middle of a merge.
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git rm -r --cached node_modules
+>> git rm -r --cached apps/api/node_modules apps/web/node_modules 2>$null
+fatal: pathspec 'node_modules' did not match any files
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git rebase --abort
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git merge --abort
+fatal: There is no merge to abort (MERGE_HEAD missing).
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git rebase --quit
+fatal: no rebase in progress
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git status
+On branch main
+Your branch is up to date with 'origin/security-fixes'.
+
+nothing to commit, working tree clean
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git fetch origin main
+>> git checkout security-fixes
+>> git reset --soft origin/main
+info: please complete authentication in your browser...
+From https://github.com/infocepts-c-hub/ManuAI
+ * branch            main       -> FETCH_HEAD
+branch 'security-fixes' set up to track 'origin/security-fixes'.
+Switched to a new branch 'security-fixes'
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git status
+On branch security-fixes
+Your branch and 'origin/security-fixes' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   BUILD_PROVENANCE.md
+        new file:   SECURITY_REMEDIATION.md
+        modified:   apps/api/package.json
+        modified:   apps/api/src/database/seed-history.ts
+        modified:   apps/api/src/index.ts
+        modified:   apps/api/src/routes/history.ts
+        modified:   infra/docker/Dockerfile.api
+        modified:   infra/docker/Dockerfile.python
+        modified:   infra/docker/Dockerfile.web
+        modified:   services/energy-optimizer/requirements.txt
+        modified:   services/pdm-inference/requirements.txt
+        modified:   services/quality-vision/requirements.txt
+        modified:   services/safety-monitor/requirements.txt
+        modified:   services/supply-intelligence/requirements.txt
+        modified:   services/twin-sync/requirements.txt
+        modified:   services/yield-optimizer/requirements.txt
+
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git rm -r --cached node_modules
+>> git rm -r --cached apps/api/node_modules apps/web/node_modules 2>$null
+fatal: pathspec 'node_modules' did not match any files
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git status
+On branch security-fixes
+Your branch and 'origin/security-fixes' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   BUILD_PROVENANCE.md
+        new file:   SECURITY_REMEDIATION.md
+        modified:   apps/api/package.json
+        modified:   apps/api/src/database/seed-history.ts
+        modified:   apps/api/src/index.ts
+        modified:   apps/api/src/routes/history.ts
+        modified:   infra/docker/Dockerfile.api
+        modified:   infra/docker/Dockerfile.python
+        modified:   infra/docker/Dockerfile.web
+        modified:   services/energy-optimizer/requirements.txt
+        modified:   services/pdm-inference/requirements.txt
+        modified:   services/quality-vision/requirements.txt
+        modified:   services/safety-monitor/requirements.txt
+        modified:   services/supply-intelligence/requirements.txt
+        modified:   services/twin-sync/requirements.txt
+        modified:   services/yield-optimizer/requirements.txt
+
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git commit -m "Security: fix all High/Medium Snyk findings"
+>>   git push -f origin security-fixes
+[security-fixes 3c248a0] Security: fix all High/Medium Snyk findings
+ 16 files changed, 203 insertions(+), 52 deletions(-)
+ create mode 100644 BUILD_PROVENANCE.md
+ create mode 100644 SECURITY_REMEDIATION.md
+info: please complete authentication in your browser...
+Enumerating objects: 53, done.
+Counting objects: 100% (53/53), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (29/29), done.
+Writing objects: 100% (29/29), 8.46 KiB | 412.00 KiB/s, done.
+Total 29 (delta 19), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (19/19), completed with 17 local objects.
+remote: error: GH013: Repository rule violations found for refs/heads/security-fixes.
+remote: Review all repository rules at https://github.com/infocepts-c-hub/ManuAI/rules?ref=refs%2Fheads%2Fsecurity-fixes
+remote: 
+remote: - Cannot force-push to this branch
+remote: 
+To https://github.com/infocepts-c-hub/ManuAI.git
+ ! [remote rejected] security-fixes -> security-fixes (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/infocepts-c-hub/ManuAI.git'
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git push -f origin security-fixes 2>&1
+info: please complete authentication in your browser...
+git : remote: error: GH013: Repository rule violations found for 
+refs/heads/security-fixes.        
+At line:1 char:1
++ git push -f origin security-fixes 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (remote: error: ...-fixes.        : 
+   String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+remote: Review all repository rules at https://github.com/infocepts-c-hub/ManuAI
+/rules?ref=refs%2Fheads%2Fsecurity-fixes        
+remote: 
+remote: - Cannot force-push to this branch        
+remote: 
+To https://github.com/infocepts-c-hub/ManuAI.git
+ ! [remote rejected] security-fixes -> security-fixes (push declined due to 
+repository rule violations)
+error: failed to push some refs to 
+'https://github.com/infocepts-c-hub/ManuAI.git'
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> 
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git push origin security-fixesgit push origin security-fixes
+error: src refspec security-fixesgit does not match any
+error: src refspec push does not match any
+error: src refspec origin does not match any
+error: failed to push some refs to 'https://github.com/infocepts-c-hub/ManuAI.git'
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git push origin security-fixesgit push origin security-fixes
+error: src refspec security-fixesgit does not match any
+error: src refspec push does not match any
+error: src refspec origin does not match any
+error: failed to push some refs to 'https://github.com/infocepts-c-hub/ManuAI.git'
+PS C:\Users\prasanth.c\Documents\AI Agent\16-Jul-2026\manuai-v4-security-fixes> git push origin security-fixes
+info: please complete authentication in your browser...
+To https://github.com/infocepts-c-hub/ManuAI.git
+ ! [rejected]        security-fixes -> security-fixes (non-fast-forward)
+error: failed to push some refs to 'https://github.com/infocepts-c-hub/ManuAI.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details
